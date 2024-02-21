@@ -26,7 +26,7 @@ MedVita is your all-in-one app, merging medical tools and trusted education to t
  
 
  - **Website :**
- - **Mobile App :** [APK][https://github.com/MedVitaHealth/MEDVITA/tree/main/MedVita_mobile_app]
+ - **Mobile App :** [APK](https://github.com/MedVitaHealth/MEDVITA/tree/main/MedVita_mobile_app)
 
 # Demo Snippets
 
