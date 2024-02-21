@@ -19,7 +19,7 @@ MedVita is your all-in-one app, merging medical tools and trusted education to t
 
 # Files
 
- - **AI-Models :** Llama 2 and Mistral 7B 
+ - **AI-Models :** Llama 2 , Mistral 7B , MoveNet Lightning and few custom Neural Networks.
    
  - **BackEnd :**
 
