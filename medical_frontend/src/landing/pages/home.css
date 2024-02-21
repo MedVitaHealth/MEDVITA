@@ -1,0 +1,63 @@
+.clean{
+    margin-bottom: 10px;
+}
+.boxing{
+    width: 90%;
+    position: relative;
+    left:8rem;
+    background-color: #A3D3FF;
+    /* Picture/Big */
+}
+
+@media (max-width: 518px) {
+    .main-card{
+        border-radius: 1rem;
+        height: 21rem;
+    }
+}
+
+@media (max-width: 518px) {
+    .remove {
+        margin-top: 10px;
+        display:none;
+    }
+}@media (max-width: 518px) {
+    .mobfont {
+        font-size: 4rem;
+    }
+}
+@media (max-width: 518px) {
+    .bigbox {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        height: 28rem;
+    }
+}
+.team{
+    background-color: #A3D3FF
+}
+.main{
+    padding-right: 0px;
+}
+.about_us{
+    background-color: ivory;
+}
+.services{
+    background-color: #A3D3FF;
+}
+.member{
+    background-color: ivory;
+    padding: 1rem;
+    height:8rem;
+    border-radius: 1.5rem;
+}
+.icons{
+    padding: 0px;
+    margin-top: 15rem;
+}
+.role{
+    padding-bottom: 0.5rem;
+}
+.navi:hover{
+    font-weight: bold;
+}

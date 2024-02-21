@@ -1,0 +1,126 @@
+.input {
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    width: 85%;
+    height: 7%;
+    margin: auto;
+    background-color: #3b1d09c3;
+    background-size: cover;
+    border-radius: 10rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #000;  /* Add transition for smooth hover effect */
+}
+
+.input:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: scale(1.005); /* Slightly increase size on hover */
+}
+.mic{
+    font-size: 2rem;
+    position: absolute; 
+    right: 1rem;
+}
+.my-image {
+    width: 80rem;
+
+    height: 3rem;
+    object-fit: cover;
+  }
+  /* .center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b1d09c3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 1rem;
+    left: 40%;
+    transform: translateX(-50%); 
+    width: 9rem;
+    height: 5rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+  }
+  .center-div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b1d09c3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 1rem;
+    right: 40%; 
+    transform: translateX(-50%); 
+    width: 9rem;
+    height: 5rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+  } */
+  .parent-div {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 1rem;
+    left: 39%;
+    right: 39%;
+  }
+  
+  .center-div, .center-div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b1d09c3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 9rem;
+    height: 5rem;
+    border-radius: 2rem;
+  }
+  @media screen and (max-width: 1350px) {
+    .center-div {
+      left: 10%; /* Adjust as needed */
+    }
+  
+    .center-div2 {
+      right: 10%; /* Adjust as needed */
+    }
+  }
+ .alert{
+    background-color: rgba(226, 216, 206, 0.784);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:50%
+ }
+  .chat1{
+    bottom:11rem;
+  }
+  .record2img{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+  }
+  .mychat{
+    background-color: #3b1d09c3;
+  }
+  .chatmain{
+    background-color: #3b1d09c3;
+  }
+  .sc-message--outgoing .sc-message--content {
+    background-color: #3b1d09c3 !important;
+  }
+  
+  /* For incoming messages */
+  .sc-message--incoming .sc-message--content {
+    background-color: #3b1d09c3 !important;
+  }
+  .custom-message .sc-message--content {
+    background-color: #3b1d09c3;
+  }

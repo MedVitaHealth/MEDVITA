@@ -1,0 +1,22 @@
+.to-signup{
+    color: #007bff;
+    text-decoration: underline;
+}
+.to-signup:hover {
+  color: #ca2e53;
+}
+
+.auth-submit {
+  margin-top: 1rem;
+  background: #510077;
+  border-color: #510077;
+  color: white;
+  border-radius: 10px;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button-hidden {
+  display: none;
+}

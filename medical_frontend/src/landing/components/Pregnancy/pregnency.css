@@ -1,0 +1,13 @@
+.chatcont {
+    /* border-radius: 2rem; */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 3px solid #e949a1cb;
+  }
+  .chatbox{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: antiquewhite;
+  }
+  .fontStyle {
+    font-family: 'Roboto', sans-serif; /* Replace 'Arial' with your desired font */
+  }
