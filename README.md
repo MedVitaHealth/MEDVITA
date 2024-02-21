@@ -19,13 +19,13 @@ MedVita is your all-in-one app, merging medical tools and trusted education to t
 
 # Files
 
- - **AI-Models :** Llama 2 , Mistral 7B , MoveNet Lightning and few custom Neural Networks.
+ - **AI-Models :** Llama 2 , Mistral 7B , MoveNet Lightning and few custom Neural Networks [model links](https://github.com/MedVitaHealth/MEDVITA/tree/main/Medvita-Backend/MedML/models)
    
- - **BackEnd :**
+ - **BackEnd :** [BackEnd](https://github.com/MedVitaHealth/MEDVITA/tree/main/Medvita-Backend)
 
  
 
- - **Website :**
+ - **Website :**[Website FrontEnd](https://github.com/MedVitaHealth/MEDVITA/tree/main/medical_frontend)
  - **Mobile App :** [APK](https://github.com/MedVitaHealth/MEDVITA/tree/main/MedVita_mobile_app)
 
 # Demo Snippets
