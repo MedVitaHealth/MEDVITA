@@ -37,7 +37,7 @@ MedVita is your all-in-one app, merging medical tools and trusted education to t
 <br>
 <img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img2.jpeg" alt="Menstruation" title="Menstruation Tracker" width=25% >
 <br>
-<img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img3.jpeg" alt="Map" title="Map Page" style="width: 100%; height: auto; max-width: 800px;">
+<img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img3.jpeg" alt="Map" title="Map Page" width=25%>
 <br>
 
 
