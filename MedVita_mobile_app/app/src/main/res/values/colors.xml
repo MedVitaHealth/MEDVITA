@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="createAccountStatusBar">#A3D3FF</color>
+    <color name="gray">#686868</color>
+    <color name="mainColor">#F8F8FB</color>
+    <color name="iconsTextColor">#00A651</color>
+    <color name="selected_alarm_bg">#FFCDD2</color>
+</resources>

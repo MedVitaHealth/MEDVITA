@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MedVita</string>
+    <string name="web_client_id">88836802689-a83g7oqpf4sqi27j4o0pgfe40gfqtjuj.apps.googleusercontent.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>

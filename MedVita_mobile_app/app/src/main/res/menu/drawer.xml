@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/online_pharmacy"
+        android:icon="@drawable/online_pharm"
+        android:title="Online Pharmacy" />
+
+
+    <item
+        android:id="@+id/home_nursing_care"
+        android:icon="@drawable/home_nursing"
+        android:title="Home Nursing Care" />
+
+    <item
+        android:id="@+id/elderly_care"
+        android:icon="@drawable/eld_care"
+        android:title="Elderly Care" />
+
+    <item
+        android:id="@+id/lab_collection"
+        android:icon="@drawable/lab_collection"
+        android:title="Laboratory Collection" />
+
+    <item
+        android:id="@+id/all_services"
+        android:icon="@drawable/all_services"
+        android:title="All Services" />
+
+
+    <item android:title="Profile">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/log_out"
+                android:title="Log out" />
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/about_us"
+                android:icon="@drawable/about_us"
+                android:title="About us" />
+
+            <item
+                android:id="@+id/share_app"
+                android:icon="@drawable/share"
+                android:title="Share this app" />
+
+
+        </menu>
+    </item>
+
+
+</menu>

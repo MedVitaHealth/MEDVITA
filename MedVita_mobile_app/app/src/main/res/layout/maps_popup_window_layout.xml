@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_maps"
+    android:layout_width="@dimen/_250sdp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="@dimen/_10sdp">
+        <TextView
+            android:id="@+id/diseaseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you have Dengue? Add your location to alert others"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="Note: You can always delete your location later"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/complete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add location"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="@color/iconsTextColor"
+        android:backgroundTint="@color/mainColor"
+        android:elevation="10dp"
+        android:layout_margin="@dimen/_10sdp"/>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_vaccination"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:gravity="center">
+
+    <CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"/>
+
+    <Button
+        android:id="@+id/complete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="@color/iconsTextColor"
+        android:backgroundTint="@color/mainColor"
+        android:elevation="10dp"
+        android:layout_margin="@dimen/_10sdp"/>
+</LinearLayout>
