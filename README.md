@@ -28,8 +28,19 @@ MedVita is your all-in-one app, merging medical tools and trusted education to t
  - **Website :**
  - **Mobile App :**
 
+# Demo Snippets
 
-
+<br>
+<img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img4.jpeg" alt="Yoga" title="Yoga Page">
+<br>
+<img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img5.jpeg" alt="HealthBot" title="Health Care Chat Bot">
+<br>
+<img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img2.jpeg" alt="Menstruation" title="Menstruation Tracker">
+<br>
+<img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img1.jpeg" alt="Medicine" title="Medicine Tracker">
+<br>
+<img src="https://github.com/MedVitaHealth/MEDVITA/blob/main/Images/img3.jpeg" alt="Map" title="Map Page">
+<br>
 
 
 ```
