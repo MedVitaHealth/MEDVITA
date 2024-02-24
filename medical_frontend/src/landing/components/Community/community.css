@@ -1,0 +1,14 @@
+.addbut {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+.comcard{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+}
+.upvote {
+    transition: transform 0.3s ease;
+}
+
+.upvote:hover {
+    transform: scale(1.2);
+    color: rgba(17, 19, 62, 0.767);
+}

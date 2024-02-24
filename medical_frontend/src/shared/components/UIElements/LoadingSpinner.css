@@ -1,0 +1,22 @@
+.loading-spinner__overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    /* background: rgba(255, 255, 255, 0.9); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.load-text {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8360c0;
+  }

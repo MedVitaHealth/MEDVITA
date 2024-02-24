@@ -1,0 +1,20 @@
+.blog {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    /* padding: 20px; */
+}
+
+.blog:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+.gridbutton {
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gridbutton:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+  }

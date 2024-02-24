@@ -1,0 +1,24 @@
+/* .cover{
+    background-image: url("../../images/mental.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+.yogabox{
+    background-color: rgba(176, 213, 176, 0.767);
+}
+.but{
+    background-color: rgb(222, 101, 65);
+}
+.but:hover {
+    background-color: rgba(244, 135, 52, 0.811); /* Change this to the color you want on hover */
+}
+.sec2{
+    background-color:rgba(132, 81, 42, 0.637); 
+}
+.grid1{
+    background-color:rgba(149, 99, 61, 0.637);
+}
+
+/* .list:hover {
+    transform: scale(1.1);
+} */

@@ -1,0 +1,10 @@
+body{
+    background-color: ivory;
+}
+.sidebar {
+    width: 270px;
+    float: left;
+  }
+.content {
+    margin-left: 270px;
+  }
