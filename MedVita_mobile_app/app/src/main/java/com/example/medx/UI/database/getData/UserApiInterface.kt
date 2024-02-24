@@ -1,6 +1,6 @@
 package com.example.medx.UI.database.getData
 
-import com.example.medx.UI.model.GetUserModel
+import com.example.medx.UI.model.getModels.GetUserModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header

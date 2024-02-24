@@ -1,7 +1,7 @@
 package com.example.medx.UI.database.postData
 
-import com.example.medx.UI.model.ApiResponse
-import com.example.medx.UI.model.MapDataModel
+import com.example.medx.UI.model.postModels.responseModels.ApiResponse
+import com.example.medx.UI.model.postModels.MapDataModel
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Header

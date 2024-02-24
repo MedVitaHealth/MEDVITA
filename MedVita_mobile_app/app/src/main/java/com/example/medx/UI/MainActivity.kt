@@ -1,32 +1,33 @@
 package com.example.medx.UI
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.Window
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.medx.R
 import com.example.medx.databinding.ActivityMainBinding
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.medx.UI.database.getData.ApiUtilities
-import com.example.medx.UI.model.GetUserModel
+import com.example.medx.UI.fragments.AccountFragment
+import com.example.medx.UI.fragments.CartFragment
+import com.example.medx.UI.fragments.ChatFragment
+import com.example.medx.UI.fragments.HomeFragment
+import com.example.medx.UI.model.getModels.GetUserModel
+import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,16 +36,25 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
-    lateinit var mGoogleSignInClient: GoogleSignInClient
+    private var isHomeFragmentVisible = false
     private lateinit var sharedPreferences: SharedPreferences
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         StatusBarUtil.setStatusBarColor(this, R.color.mainColor)
+
+        val bottomNavigationView = binding.navView
+        if (savedInstanceState == null) {
+            // If the activity is newly created, replace the fragment with HomeFragment
+            replaceFragment(HomeFragment())
+            bottomNavigationView.setItemSelected(R.id.homeFragment2)
+            isHomeFragmentVisible = true
+        }
+
 
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
@@ -59,9 +69,26 @@ class MainActivity : AppCompatActivity() {
 //            .build()
 //        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
-        val navController = findNavController(R.id.fragmentContainerView2)
-        bottomNavigationView.setupWithNavController(navController)
+        bottomNavigationView.setOnItemSelectedListener { itemId ->
+            when (itemId) {
+                R.id.homeFragment2 -> {
+                    replaceFragment(HomeFragment()) // Replace with your actual HomeFragment class
+                    isHomeFragmentVisible = true
+                }
+                R.id.cartFragment -> {
+                    replaceFragment(CartFragment()) // Replace with your actual CartFragment class
+                    isHomeFragmentVisible = false
+                }
+                R.id.chatFragment -> {
+                    replaceFragment(ChatFragment()) // Replace with your actual ChatFragment class
+                    isHomeFragmentVisible = false
+                }
+                R.id.accountFragment -> {
+                    replaceFragment(AccountFragment()) // Replace with your actual AccountFragment class
+                    isHomeFragmentVisible = false
+                }
+            }
+        }
 
         binding.profileImg.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
@@ -118,6 +145,28 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if (isHomeFragmentVisible) {
+            // If HomeFragment is currently visible, close the app entirely
+            finish()
+            super.onBackPressed()
+        } else {
+            // If not, go back to HomeFragment
+            replaceFragment(HomeFragment())
+            isHomeFragmentVisible = true
+            binding.navView.setItemSelected(R.id.homeFragment2)
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView2, fragment) // Replace with the ID of your fragment container
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun getUserData(userToken: String, userId: String, nameTextView: TextView?, emailTextView: TextView?) {

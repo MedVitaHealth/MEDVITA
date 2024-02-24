@@ -13,11 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medx.R
 import com.example.medx.UI.VaccinationInfoActivity
-import com.example.medx.UI.VaccinationPopupWindow
 import com.example.medx.UI.adapter.CompletedVaccinationAdapter
-import com.example.medx.UI.adapter.RemainingVaccinationAdapter
 import com.example.medx.UI.model.VaccinationModel
-import java.time.LocalDate
+import com.example.medx.UI.services.VaccinationManager
 
 class CompletedFragment : Fragment() {
 

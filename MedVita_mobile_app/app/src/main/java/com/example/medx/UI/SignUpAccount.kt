@@ -1,17 +1,17 @@
 package com.example.medx.UI
 
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
-import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.medx.R
 import com.example.medx.UI.database.postData.ApiUtilities
-import com.example.medx.UI.model.ApiResponse
-import com.example.medx.UI.model.CreateAccountModel
+import com.example.medx.UI.model.postModels.CreateAccountModel
+import com.example.medx.UI.model.postModels.responseModels.ApiResponse
 import com.example.medx.databinding.ActivitySignUpAccountBinding
+import com.github.ybq.android.spinkit.SpinKitView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,13 +22,15 @@ class SignUpAccount : AppCompatActivity() {
     var email: String? = ""
     var name: String? = ""
     var password: String? = ""
-    @RequiresApi(Build.VERSION_CODES.M)
+    private lateinit var progressBar: SpinKitView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         StatusBarUtil.setStatusBarColor(this, R.color.createAccountStatusBar)
+        progressBar = binding.progressBar
 
         binding.loginText.setOnClickListener {
             startActivity(Intent(this, LoginAccount::class.java))
@@ -45,6 +47,7 @@ class SignUpAccount : AppCompatActivity() {
             } else if (password!!.isEmpty()) {
                 Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show()
             } else {
+                progressBar.visibility = View.VISIBLE
                 updateDatabase()
             }
         }
@@ -81,7 +84,10 @@ class SignUpAccount : AppCompatActivity() {
                         intent.putExtra("name", name)
                         Log.d("TAG", "onResponse: ${response.code()}")
                         Log.d("TAG", "onResponse: ${response.message()}")
+                        progressBar.visibility = View.INVISIBLE
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                         startActivity(intent)
+                        finish()
                     } else {
                         Toast.makeText(this@SignUpAccount, "Response body is null", Toast.LENGTH_LONG).show()
                     }

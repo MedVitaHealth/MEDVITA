@@ -115,7 +115,7 @@
                 android:drawableTint="@color/iconsTextColor"
                 android:focusable="false"
                 android:fontFamily="@font/inter_medium"
-                android:hint="Last Period Start Date"
+                android:hint="Last Period End Date"
                 android:inputType="none"
                 android:onClick="showDatePicker"
                 android:textCursorDrawable="@null"

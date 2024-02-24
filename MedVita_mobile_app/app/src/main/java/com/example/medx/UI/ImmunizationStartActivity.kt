@@ -45,7 +45,6 @@ class ImmunizationStartActivity : AppCompatActivity() {
                     val editor = sharedPreferences.edit()
                     editor.putString("BIRTH_DATE", selectedBirthDate.toString())
                     editor.putString("CHILD_NAME", childName)
-//                    editor.putInt("IMMUNIZATION_FLAG", 1)
                     editor.apply()
 
                 }

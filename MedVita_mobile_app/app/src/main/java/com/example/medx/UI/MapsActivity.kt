@@ -19,9 +19,8 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import com.example.medx.R
 import com.example.medx.UI.database.getData.ApiUtilities
-import com.example.medx.UI.model.DiseaseLocation
-import com.example.medx.UI.model.DiseaseLocationResponse
-import com.example.medx.UI.model.LocationData
+import com.example.medx.UI.model.getModels.DiseaseLocation
+import com.example.medx.UI.model.getModels.DiseaseLocationResponse
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap

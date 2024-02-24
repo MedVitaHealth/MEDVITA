@@ -16,15 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileImg"
+        <ImageView
+            android:id="@+id/backBtn"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_25sdp"
+            android:layout_height="@dimen/_15sdp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/user"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="@dimen/_1sdp" />
+            android:src="@drawable/arrow_icon"
+            android:rotation="180"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

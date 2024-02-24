@@ -1,73 +1,98 @@
 package com.example.medx.UI
 
+
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.medx.R
 import android.os.Build
-import android.widget.CalendarView
+import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import com.applandeo.materialcalendarview.CalendarDay
+import com.applandeo.materialcalendarview.CalendarView
+import com.applandeo.materialcalendarview.EventDay
+import com.example.medx.R
+import com.example.medx.databinding.ActivityMenstruationBinding
 import java.time.LocalDate
+import java.time.ZoneId
 import java.util.*
 
 class MenstruationActivity : AppCompatActivity() {
 
     private lateinit var textRemainingDays: TextView
-    private lateinit var calendarView: CalendarView
+    private lateinit var customCalendarView: CalendarView
+    private lateinit var binding: ActivityMenstruationBinding
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menstruation)
+        binding = ActivityMenstruationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        StatusBarUtil.setStatusBarColor(this, R.color.mainColor)
 
-        textRemainingDays = findViewById(R.id.textRemainingDays)
-        calendarView = findViewById(R.id.calendarView)
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
+
+        textRemainingDays = binding.textRemainingDays
+        customCalendarView = binding.calendarView
 
         // Get data from shared preferences
         val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-        val lastPeriodDate = LocalDate.parse(sharedPreferences.getString("PERIOD_DATE", ""))
+        val lastPeriodEndDate = LocalDate.parse(sharedPreferences.getString("PERIOD_DATE", ""))
         val avgCycleLength = sharedPreferences.getString("CYCLE_Length", "")?.toInt() ?: 28
         val avgPeriodLength = sharedPreferences.getString("PERIOD_Length", "")?.toInt() ?: 5
 
         // Calculate important dates
-        val ovulationDate = lastPeriodDate.plusDays((avgCycleLength / 2).toLong())
-        val fertileStartDate = ovulationDate.minusDays(2)
+        val lastPeriodStartDate = lastPeriodEndDate.minusDays(avgPeriodLength.toLong()-1)
+        val ovulationDate = lastPeriodEndDate.plusDays((avgCycleLength / 2).toLong())
+        val fertileStartDate = ovulationDate.minusDays(3)
         val fertileEndDate = ovulationDate.plusDays(2)
-        val periodStartDate = lastPeriodDate
-        val periodEndDate = lastPeriodDate.plusDays(avgPeriodLength.toLong())
+        val periodStartDate = lastPeriodStartDate.plusDays(avgCycleLength.toLong())
+        val periodEndDate = periodStartDate.plusDays(avgPeriodLength.toLong()-1)
+
+        Log.d("TAG", "onCreateMenstruation: $lastPeriodStartDate, $lastPeriodEndDate")
 
         // Calculate remaining days until the next period
         val currentDate = LocalDate.now()
-        val remainingDays = periodEndDate.until(currentDate).days
+        val remainingDays = currentDate.until(periodStartDate).days
 
         // Set text for remaining days
-        textRemainingDays.text = "Remaining Days: $remainingDays"
+        textRemainingDays.text = remainingDays.toString()
 
-        // Set calendar markings
-        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val selectedDate = LocalDate.of(year, month + 1, dayOfMonth)
+        // List to store EventDay objects for marking specific dates
+        val events = mutableListOf<EventDay>()
 
-            // Check and mark days based on conditions
-//            if (selectedDate.isAfter(periodStartDate) && selectedDate.isBefore(periodEndDate)) {
-//                // Mark days of last period with continuous pink color
-//                val pinkColor = Color.parseColor("#FFC0CB") // Adjust the color as needed
-//                calendarView.setDateCellBackgroundColor(selectedDate.toEpochDay() * 24 * 60 * 60 * 1000, pinkColor)
-//            }
-//
-//            if (selectedDate.isEqual(ovulationDate)) {
-//                // Mark ovulation day with continuous purple color
-//                val purpleColor = Color.parseColor("#800080") // Adjust the color as needed
-//                calendarView.setDateCellBackgroundColor(selectedDate.toEpochDay() * 24 * 60 * 60 * 1000, purpleColor)
-//            }
-//
-//            if (selectedDate.isAfter(fertileStartDate) && selectedDate.isBefore(fertileEndDate)) {
-//                // Mark fertile days with hollow purple color
-//                val hollowPurpleColor = Color.parseColor("#800080") // Adjust the color as needed
-//                calendarView.setDateTextAppearance((selectedDate.toEpochDay() * 24 * 60 * 60 * 1000).toInt(), R.style.HollowDayTextAppearance)
-//                calendarView.setDateCellBackgroundColor(selectedDate.toEpochDay() * 24 * 60 * 60 * 1000, Color.TRANSPARENT)
-//                calendarView.addDateCellSpan(CustomSpan(hollowPurpleColor), selectedDate.toEpochDay() * 24 * 60 * 60 * 1000)
-//            }
+        var date = lastPeriodStartDate
+        while (!date.isAfter(lastPeriodEndDate)) {
+            events.add(EventDay(date.toDate(), R.drawable.period))
+            date = date.plusDays(1)
         }
+
+        date = periodStartDate
+        while (!date.isAfter(periodEndDate)) {
+            events.add(EventDay(date.toDate(), R.drawable.expected_period_days))
+            date = date.plusDays(1)
+        }
+
+        date = fertileStartDate
+        while (!date.isAfter(fertileEndDate)) {
+            if(date != ovulationDate)
+                events.add(EventDay(date.toDate(), R.drawable.fertilisation))
+            date = date.plusDays(1)
+        }
+
+        events.add(EventDay(ovulationDate.toDate(), R.drawable.ovulation))
+
+
+        // Set the events to the CalendarView
+        customCalendarView.setEvents(events)
+
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun LocalDate.toDate(): java.util.Calendar {
+        val calendar = java.util.Calendar.getInstance()
+        calendar.set(this.year, this.monthValue - 1, this.dayOfMonth)
+        return calendar
     }
 }

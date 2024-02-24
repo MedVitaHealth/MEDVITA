@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/homeFragment2"
         android:icon="@drawable/home"
-        android:title="Home" />
+        android:title="Home"
+        app:cnb_iconColor="@color/iconsTextColor"/>
 
     <item
         android:id="@+id/cartFragment"
         android:icon="@drawable/cart"
-        android:title="My Network" />
+        android:title="Cart"
+        app:cnb_iconColor="@color/iconsTextColor"/>
 
     <item
         android:id="@+id/chatFragment"
         android:icon="@drawable/chat"
-        android:title="Post" />
+        android:title="Chat"
+        app:cnb_iconColor="@color/iconsTextColor"/>
 
     <item
         android:id="@+id/accountFragment"
-        android:icon="@drawable/user"
-        android:title="Notifications" />
+        android:icon="@drawable/accounts"
+        android:title="Account"
+        app:cnb_iconColor="@color/iconsTextColor"/>
 
 </menu>

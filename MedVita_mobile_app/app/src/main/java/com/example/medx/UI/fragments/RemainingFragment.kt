@@ -3,7 +3,6 @@ package com.example.medx.UI.fragments
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +14,7 @@ import com.example.medx.R
 import com.example.medx.UI.VaccinationPopupWindow
 import com.example.medx.UI.adapter.RemainingVaccinationAdapter
 import com.example.medx.UI.model.VaccinationModel
+import com.example.medx.UI.services.VaccinationManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -77,23 +77,6 @@ class RemainingFragment : Fragment() {
                 // Handle error
             }
         })
-
-//        if(flag == null){
-//            VaccinationManager.initializeVaccinations(userId,localDate,childName)
-//            val editor = sharedPreferences.edit()
-//            editor.putString("FLAG", "DONE")
-//            editor.apply()
-//        }
-
-//        VaccinationManager.getRemainingVaccinations(userId) { vaccinations ->
-//            adapter.submitList(vaccinations)
-//        }
-//
-//        adapter = RemainingVaccinationAdapter { vaccination ->
-//            showPopupWindow(localDate, vaccination)
-//        }
-//        recyclerView.adapter = adapter
-
 
         return view
     }

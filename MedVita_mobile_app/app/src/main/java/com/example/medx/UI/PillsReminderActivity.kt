@@ -49,6 +49,10 @@ class PillsReminderActivity : AppCompatActivity(), AlarmAdapter.OnAlarmSwitchLis
 
         StatusBarUtil.setStatusBarColor(this, R.color.mainColor)
 
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
+
         alarmManager = this.getSystemService(AlarmManager::class.java)
 
         alarmViewModel = ViewModelProvider(this).get(AlarmViewModel::class.java)

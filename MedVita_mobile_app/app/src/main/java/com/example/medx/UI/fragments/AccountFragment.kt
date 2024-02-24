@@ -13,7 +13,7 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.medx.R
 import com.example.medx.UI.PillsReminderActivity
-import com.example.medx.UI.model.GetUserModel
+import com.example.medx.UI.model.getModels.GetUserModel
 import com.example.medx.UI.database.getData.ApiUtilities
 import retrofit2.Call
 import retrofit2.Callback
@@ -58,7 +58,8 @@ class AccountFragment : Fragment() {
     }
 
     private fun getUserData(userToken: String, userId: String) {
-        val call = ApiUtilities.getUserAPIInterface()?.getUserData("Bearer ${userToken.toString()}", userId.toString())
+        val call = ApiUtilities.getUserAPIInterface()
+            ?.getUserData("Bearer ${userToken.toString()}", userId.toString())
         call?.enqueue(object : Callback<GetUserModel> {
             override fun onResponse(call: Call<GetUserModel>, response: Response<GetUserModel>) {
                 if (response.isSuccessful) {

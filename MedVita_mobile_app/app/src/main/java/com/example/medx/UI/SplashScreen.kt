@@ -20,8 +20,7 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        val window: Window = this.window
-        window.statusBarColor = this.resources.getColor(R.color.black)
+        StatusBarUtil.setStatusBarColor(this, R.color.splash_status_bar_gray)
 
         val textWelcome = findViewById<TextView>(R.id.textWelcome)
 
