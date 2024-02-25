@@ -41,7 +41,7 @@ MODEL_CKPT = "mistral-7b-openorca.Q4_K_S.gguf"
 MODEL_TYPE = "llama"
 MAX_NEW_TOKENS = 512
 TEMPERATURE = 0.3
-# WEAVIATE_API_KEY = 'BxHXpnO5Dw9zb8F60Bp6uDqK3MHUONf4EXJm'
+# WEAVIATE_API_KEY = 'sdafadbvsfgnsfbsfv'
 
 
 
@@ -63,7 +63,7 @@ def retriever_creation():
     
     weaviate_client = weaviate.Client(
     url="https://menstruation-bot-2xp9abqm.weaviate.network",  # Replace with your endpoint
-    auth_client_secret=weaviate.auth.AuthApiKey('BxHXpnO5Dw9zb8F60Bp6uDqK3MHUONf4EXJm')# Replace w/ your Weaviate instance API key
+    auth_client_secret=weaviate.auth.AuthApiKey('acdbdfbadfbadfbafb')# Replace w/ your Weaviate instance API key
     )
     
     
@@ -186,8 +186,8 @@ def display_conversation(history):
 
 def main():
 
-    st.title("Financial Advisor: A Financial Nerd 📚🤖")
-    st.subheader("A bot created using Langchain 🦜 to run on cpu making your financial management process easier")
+    st.title("Menstrual Health Advisor: An Expert in the field📚🤖")
+    st.subheader("A chatbot created using Langchain 🦜 to run on cpu making a one stop place to know anything related to Menstruation")
 
     user_input = st.text_input("Enter your query")
 
