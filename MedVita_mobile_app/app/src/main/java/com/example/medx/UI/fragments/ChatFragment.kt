@@ -92,7 +92,7 @@ class ChatFragment : Fragment() {
 
     private suspend fun requestApiResponse(message: String): String {
 
-        val apiKey = "AIzaSyCyRn9q5nX_kgufxNEUFXaouTstOVFRsfg"
+        val apiKey = ""
         val generativeModel = GenerativeModel("gemini-1.0-pro", apiKey)
         return generativeModel.generateContent(message).text.toString()
 
